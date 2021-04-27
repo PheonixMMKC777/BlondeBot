@@ -1,22 +1,17 @@
 import discord
 import os
 import requests
-# import json
-# import random
 
+#starts bot
 client = discord.Client()
 
-# def get_quote():
-# response = requests.get("")
-#  json_data = json.loads(response.text)
-#  quote = json_data[0]['q'] + " -" + json_data[0]['a']
-#  return(quote)
-
+#runs upon startup
 @client.event
 async def on_ready():
   await client.change_presence(activity=discord.Game(name="this is a status"))
   print('We have logged in as {0.user}'.format(client))
 
+#this watches for messages
 @client.event
 async def on_message(message):
   if message.author == client.user:
@@ -32,7 +27,3 @@ async def on_message(message):
     
 
 client.run('paste your bot token here in these apostropheses')
-
-
-# other stuff
-# {0.author.mention}  pings user
